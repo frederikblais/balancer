@@ -1,3 +1,16 @@
+# Lab02
+
+Lab02 is a server balancer that iterate through 3 node.js server and balance requests amongst them.
+
+# Clone
+
+```bash
+git clone "https://github.com/frederikblais/lab2.git"
+```
+
+# How it works
+![ScreenShot](https://github.com/frederikblais/lab2/blob/main/git/objective.png)
+
 # How to run
 
 1. create balancer.js and implement the necessary code
