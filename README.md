@@ -9,7 +9,7 @@ git clone "https://github.com/frederikblais/lab2.git"
 ```
 
 # How it works
-![ScreenShot](https://github.com/frederikblais/lab2/blob/main/git/objective.png)
+![ScreenShot](https://github.com/frederikblais/balancer/blob/main/git/objective.png)
 
 # How to run
 
