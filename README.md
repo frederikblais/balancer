@@ -5,7 +5,7 @@ Lab02 is a server balancer that iterate through 3 node.js server and balance req
 # Clone
 
 ```bash
-git clone "https://github.com/frederikblais/lab2.git"
+git clone "https://github.com/frederikblais/balancer.git"
 ```
 
 # How it works
