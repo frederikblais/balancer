@@ -1,6 +1,6 @@
 var http = require('http');
 
-http.request("http://localhost:1111", function(response) {
+var callingOtherServerRequest = http.request("http://localhost:1111", function(response) {
     var str = '';
     //another chunk of data has been received, so append it to `str`
     response.on('data', function (chunk) {
@@ -11,4 +11,10 @@ http.request("http://localhost:1111", function(response) {
     response.on('end', function () {
       console.log(str);
     });
+
   }).end();
+
+  callingOtherServerRequest.on('error', function (e) {
+    console.info("server is not responding");
+  });
+  
