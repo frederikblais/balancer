@@ -61,7 +61,7 @@ http.createServer(function (req, res) {
       }).end();
 
       callingOtherServerRequest.on('error', function (e) {
-        console.info("server "+servers[0]+ " is not responding, forwarding you to the next server.");
+        console.info("server "+address+ " is not responding, forwarding you to the next server.");
         redirrect(address);
       });
     }
