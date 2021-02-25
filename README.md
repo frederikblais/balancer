@@ -31,7 +31,7 @@ git clone "https://github.com/frederikblais/balancer.git"
     * Calling http://localhost:9999/hello the third time will return “Hi I'm server 3”
     * Calling http://localhost:9999/hello the fourth time will return “Hi I'm server 1”
 
-#Resilience
+# Resilience
 
 If one of the servers is down, go to the next available one.  
 
