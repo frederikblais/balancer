@@ -33,20 +33,20 @@ git clone "https://github.com/frederikblais/balancer.git"
 
 #Resilience
 
-If one of the servers is down, go to the next available one.
+If one of the servers is down, go to the next available one.  
 
-Example :
--Stop server 1
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 2”
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 3”
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 2”-Etc...
+Example :  
+-Stop server 1  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 2”  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 3”  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 2”-Etc...  
 
--Stop server 2
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 3”
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”-Etc...
+-Stop server 2  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 3”  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”-Etc...  
 
--Stop server 3
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 2”
--Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”-Etc...
+-Stop server 3  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 2”  
+-Calling ​http://localhost:9999/hello​ the first time will return “Hi I'm server 1”-Etc...  
