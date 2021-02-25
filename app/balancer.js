@@ -13,8 +13,8 @@ http.createServer(function (req, res) {
   res.writeHead(200, { "Content-Type": "text/html" });
   var p = url.parse(req.url, true).pathname;
 
+  // apply the function on /hello
   if (p == '/hello') {
-    // send to different port
 
     if(index == 3){
       index = 0;
@@ -38,14 +38,19 @@ http.createServer(function (req, res) {
     }
 
     index += 1;
-    console.log('new index = '+index)
 
-    function req_server(index) {
-      if(index == 3){
+    // Function to check if the server respond
+    // if true -> req server, res str
+    // else -> req next server (ind == index + 1)
+    //
+    // two var: ind, index -> needed to fix the server 3 not responding bug.
+    function req_server(ind) {
+      if(ind == 3){
         index = 0;
       }
-      console.log('index =  ',index)
-      var callingOtherServerRequest = http.request(servers[index], function (response) {
+      
+      // If server respond -> send request
+      var callingOtherServerRequest = http.request(servers[ind], function (response) {
         var str = '';
         //another chunk of data has been received, so append it to `str`
         response.on('data', function (chunk) {
@@ -54,18 +59,23 @@ http.createServer(function (req, res) {
       
         //the whole response has been received, so we just print it out here
         response.on('end', function () {
-          console.log(servers[index]);
           console.log(str);
-          console.log('');
         });
 
       }).end();
 
+      // If server does not respond -> send request to next server
       callingOtherServerRequest.on('error', function (e) {
-        console.info(servers[index], " is not responding");
-        console.log('');
-        index += 1;
-        req_server(index);
+        if (ind >= 3 || index >= 3) {
+          ind = 0;
+          index = 1;
+          req_server(ind);
+        }
+        else {
+          ind += 1;
+          index += 1;
+          req_server(ind);
+        }
       });
     }
   }
