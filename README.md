@@ -1,6 +1,6 @@
 # Load Balancer
 
-Lab02 is a server balancer that iterate through 3 node.js server and balance requests amongst them.
+Load Balancer is a server balancer that iterate through 3 node.js server and balance requests amongst them.
 
 # Clone
 
